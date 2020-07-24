@@ -7,7 +7,7 @@ class MyComponent extends ToyReact.Component{
         return <div name="a">
             <span>hello</span>
             <span>world</span>
-            <div>{this.children}</div>
+            {this.children}
         </div>
     }
 }
@@ -16,6 +16,7 @@ class MyComponent extends ToyReact.Component{
 const root = document.getElementById('root');
 
 const app = <MyComponent >
+    <MyComponent />
     <span>hello</span>
     {() => <span>123</span>}  
 </MyComponent>

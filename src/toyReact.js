@@ -72,11 +72,12 @@ function createElement(type, props, ...children){
                 if(typeof child === 'string'){
                     vChild = new TextElementComponent(child);
                 }
-                else if(Object.prototype.toString(child) === '[object Object]' && child instanceof Component ){
+                else if(Object.prototype.toString.call(child) === '[object Object]' && child instanceof Component ){
                     vChild = child;
                 }
                 else if(Object.prototype.toString.call(child) === '[object Function]'){
                     vChild = child();
+                    
                 }
                 else{
                     // invalid component fallover
